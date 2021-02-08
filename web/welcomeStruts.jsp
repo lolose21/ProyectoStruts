@@ -12,7 +12,16 @@
         <html:base/>
     </head>
     <body style="background-color: white">
-        
+        <h1>
+            <bean:message key="mensaje.bienvenida"/>
+        </h1>
+        <h1>
+            <bean:message key="mensaje.usuario"/>
+        </h1>
+        <h1>
+            <bean:message key="mensaje.descripcion"/>
+        </h1>
+            
         <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
             <div  style="color: red">
                 ERROR:  Application resources not loaded -- check servlet container
