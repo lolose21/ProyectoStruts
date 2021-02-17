@@ -16,6 +16,24 @@ public class Form05Persona extends org.apache.struts.action.ActionForm {
     private String nombre;
     private String email;
     private int edad;
+    private int numero;
+    private String localidad;
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
 
     public String getNombre() {
         return nombre;
@@ -55,7 +73,10 @@ public class Form05Persona extends org.apache.struts.action.ActionForm {
         } else if (getEdad() < 18) {
             //mayor de edad
             errors.add("edad", new ActionMessage("error.edad.rango"));
+
         }
+
         return errors;
     }
+
 }
