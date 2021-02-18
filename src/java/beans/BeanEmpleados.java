@@ -59,7 +59,7 @@ public class BeanEmpleados {
         html += "<td>" + empleado.getOficio() + "</td>";
         html += "<td>" + empleado.getSalario() + "</td>";
         html += "<td>" + empleado.getIddepartamento() + "</td>";
-        html += "<td>" + "<html:link action='/Action14Empleados' name='incremento'>" + "incremento" + "</html:link>" + "</td>";
+
         html += "</tr>";
         html += "</tbody>";
         html += "</table>";
