@@ -80,5 +80,38 @@ Veremos los cambios al eliminar.
                 </logic:iterate>
             </tbody>
         </table>
+        <table border="1">
+             <html:form action="/Action16ModificarEnfermos">
+                 <thead>
+                     <tr>
+                         <th>
+                             MODIFICAR
+                         </th>
+                         <th>
+                             Inscripcion
+                         </th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td>
+                             <html:text property="update"/>
+                         </td>
+                        <td>
+                            <html:text  property="inscripcion"/>
+                           
+                         </td>
+                         <td>
+                              <button type="submit">
+                                MODIFICAR APELLIDO
+                            </button>
+                         </td>
+                    </tr>
+             </tbody>
+         </html:form>
+        </table>
+         <logic:present name="mensaje1">
+            <bean:write name="mensaje1" filter="false"/>
+        </logic:present>
     </body>
 </html>
