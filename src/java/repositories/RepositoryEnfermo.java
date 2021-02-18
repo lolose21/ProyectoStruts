@@ -50,4 +50,14 @@ public class RepositoryEnfermo {
         rs.close();
         return lista;
     }
+
+    public void modificarEmfermo(String apellido, int inscripcion) throws SQLException {
+        Connection cn = this.getConnection();
+        String sql = "update enfermo set apellido=? where inscripcion =?";
+        PreparedStatement pst = cn.prepareStatement(sql);
+        pst.setString(1, apellido);
+        pst.setInt(2, inscripcion);
+        pst.executeUpdate();
+        cn.close();
+    }
 }
