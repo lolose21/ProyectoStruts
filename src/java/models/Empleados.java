@@ -8,6 +8,9 @@ public class Empleados {
     private int iddepartamento;
     private int idEmpleado;
 
+    public Empleados() {
+    }
+
     public Empleados(int id, String ape, String ofi, int sal, int deptno) {
         this.idEmpleado = id;
         this.apellido = ape;
@@ -31,10 +34,6 @@ public class Empleados {
 
     public void setIdEmpleado(int idEmpleado) {
         this.idEmpleado = idEmpleado;
-    }
-
-    public Empleados() {
-
     }
 
     public String getApellido() {
