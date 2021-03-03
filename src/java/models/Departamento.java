@@ -5,6 +5,15 @@ public class Departamento {
     private int numero;
     private String nombre;
     private String localidad;
+
+    public Departamento() {
+    }
+
+    public Departamento(int num, String nom, String loc) {
+        this.numero = num;
+        this.nombre = nom;
+        this.localidad = loc;
+    }
 //<editor-fold defaultstate="collapsed" desc="setter and getter">
 
     public int getNumero() {

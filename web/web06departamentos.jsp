@@ -15,6 +15,11 @@
     </head>
     <body>
         <h1>Tabla DEPARTAMENTOS</h1>
+        <li>
+            <html:link href="web13eliminardepartamento.jsp">
+            Eliminar
+        </html:link>
+        </li>
         <html:form action="/Action06Departamentos">
             <button type="submit" id="boton" name="boton">
                

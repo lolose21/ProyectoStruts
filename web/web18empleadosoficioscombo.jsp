@@ -34,8 +34,7 @@
             <tr>
             <th>APELLIDO</th>
             <th>OFICIO</th>
-            <
-            th>SALARIO</th>
+            <th>SALARIO</th>
             </tr>
             </thead>
             <tbody>
@@ -55,5 +54,52 @@
             </tbody>
             </table>
             </logic:present>
+            <html:form action="/Action18InsertarEmpleado">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <td>EMP_NO</td>
+                            <td>APELLIDO</td>
+                            <td>OFICIO</td>
+                            <td>DIR</td>
+                            <td>fECHA_ALT</td>
+                            <td>SALARIO</td>
+                            <td>COMISION</td>
+                            <td>DEPT_NO</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                
+                                <html:text property=""/>
+                            </td>
+                            <td>
+                                <html:text property=""/>
+                            </td>
+                            <td>
+                                <html:text property=""/>
+                            </td>
+                            <td>
+                                <html:text property=""/>
+                            </td>
+                            <td>
+                                <html:text property=""/>
+                            </td>
+                            <td>
+                                <html:text property=""/>
+                            </td>
+                            <td>
+                                <html:text property=""/>
+                            </td>
+                            <td>
+                                <html:text property=""/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </html:form>
+            
     </body>
 </html>

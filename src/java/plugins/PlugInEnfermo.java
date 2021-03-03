@@ -2,8 +2,6 @@ package plugins;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import models.Enfermos;
 import org.apache.struts.action.ActionServlet;

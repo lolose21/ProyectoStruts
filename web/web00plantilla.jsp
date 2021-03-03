@@ -1,5 +1,6 @@
 
 
+
 <%@page  contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -15,17 +16,10 @@
     <main role="main" class="container">
 
         <div class="starter-template">
-          <h1 style="color: green">PREGUNTA</h1>
-        <html:form action="/Action01VistaControlador">
-            <p><b>¿cuanto son 2 + 2?</b></p>
-            <html:text property="respuesta"/>
-            <html:submit value="Comprobar respuesta"/>
-        </html:form>
+          <h1>Acceso a objetos JQUERY</h1>
+          <p class="lead">eyy.<br> All you get</p>
         </div>
     </main><!-- /.container -->
     <jsp:include page="includes/webfooter.jsp"/>
     </body>
 </html>
-
-
-

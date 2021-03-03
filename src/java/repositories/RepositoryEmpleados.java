@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.naming.spi.DirStateFactory;
 import models.Empleados;
 import oracle.jdbc.OracleDriver;
 
@@ -61,7 +62,11 @@ public class RepositoryEmpleados {
             int sal = rs.getInt("salario");
             int deptno = rs.getInt("dept_no");
             Empleados empleado = new Empleados(idempleado, ape, ofi, sal, deptno);
-
+            empleado.setIdEmpleado(idempleado);
+            empleado.setApellido(ape);
+            empleado.setOficio(ofi);
+            empleado.setSalario(sal);
+            empleado.setIddepartamento(deptno);
             lista.add(empleado);
         }
         rs.close();
@@ -135,5 +140,31 @@ public class RepositoryEmpleados {
         pst.setInt(1, idempleado);
         pst.executeUpdate();
         cn.close();
+    }
+
+    public ArrayList<Empleados> getEmpleadosDepastamentos(String[] datos) throws SQLException {
+        Connection cn = this.getConnection();
+        String deptnos = "";
+        for (String d : datos) {
+            deptnos += d + ",";
+        }
+        deptnos = deptnos.substring(0, deptnos.length() - 1);
+        String sql = "select * from emp where dept_no in(" + deptnos + ")";
+        Statement st = cn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        ArrayList<Empleados> lista = new ArrayList<>();
+        while (rs.next()) {
+            int id = rs.getInt("emp_no");
+            String ape = rs.getString("apellido");
+            String ofi = rs.getString("oficio");
+            int sal = rs.getInt("salario");
+            int deptno = rs.getInt("dept_no");
+            Empleados emp = new Empleados(id, ape, ofi, sal, deptno);
+            lista.add(emp);
+
+        }
+        rs.close();
+        cn.close();
+        return lista;
     }
 }

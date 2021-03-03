@@ -98,4 +98,27 @@ public class RepositoryDepartamentos {
         return oficios;
     }
 
+    public ArrayList<Departamento> getOficiosMultiples(String[] datos) throws SQLException {
+        Connection cn = this.getConnection();
+        String deptno = "";
+        for (String d : datos) {
+            deptno += d + ",";
+        }
+        deptno = deptno.substring(0, deptno.length() - 1);
+        String sql = "selest * from emp where dept_no in(" + deptno + ")";
+        Statement st = cn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        ArrayList<Departamento> lista = new ArrayList<>();
+        while (rs.next()) {
+            int num = rs.getInt("dept_no");
+            String nom = rs.getString("dnombre");
+            String loc = rs.getString("loc");
+            Departamento dept = new Departamento(num, nom, loc);
+            lista.add(dept);
+        }
+        rs.close();
+        cn.close();
+        return lista;
+    }
+
 }
